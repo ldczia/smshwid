@@ -1,2 +1,75 @@
 031B021C-040D-052B-3B06-870700080009
 6BD3751C-45E1-D013-EFBF-581122AF7824
+
+ARASINA BOSLUKLAR KOYULABILEN KAHVE DUNYASI
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    BenimUyg(),
+  );
+}
+
+class BenimUyg extends StatelessWidget {
+  const BenimUyg({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.black38,
+        appBar: AppBar(
+          title:Text('Coffe World'),
+          backgroundColor: Colors.blueAccent,
+        ),
+        body: SafeArea(
+          child: Row(
+            children:[
+              CircleAvatar(
+                radius: 70.0,
+                backgroundColor: Colors.amber,
+                backgroundImage: AssetImage('images/kahve.jpg'),
+              ),
+              SizedBox(width: 20),
+              CircleAvatar(
+                radius: 70.0,
+                backgroundColor: Colors.amber,
+                backgroundImage: AssetImage('images/kahve.jpg'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+MUTLU BAYRAMLAR APPBAR VE ORTAYA YAZI EKLENEBİLİYOR.
+import 'package:flutter/material.dart';
+
+//ctrl+alt+l
+//ctrl+y
+//ctr+/
+//ctrl+d
+void main() {
+  const _color = const Color(0xFFD7E0FF);
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        // backgroundColor: Colors.blueGrey[100],
+        backgroundColor: _color,
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text('Mutlu Bayramlar'),
+          backgroundColor: Colors.blueGrey[800],
+        ),
+        body: Center(
+          child: Image.asset('assets/images/mutlu_bayramlar.jpg'),
+        ),
+      ),
+    ),
+  );
+}
+
