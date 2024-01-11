@@ -1,75 +1,84 @@
 031B021C-040D-052B-3B06-870700080009
 6BD3751C-45E1-D013-EFBF-581122AF7824
 
-ARASINA BOSLUKLAR KOYULABILEN KAHVE DUNYASI
+FLUTTER MOBİL KOD
+---
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    BenimUyg(),
-  );
+  runApp(MyApp());
 }
 
-class BenimUyg extends StatelessWidget {
-  const BenimUyg({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black38,
+        backgroundColor: Colors.grey,
         appBar: AppBar(
-          title:Text('Coffe World'),
-          backgroundColor: Colors.blueAccent,
+          centerTitle: true,
+          title: Text('Et Lokantası'),
+          backgroundColor: Colors.black38,
         ),
-        body: SafeArea(
-          child: Row(
-            children:[
-              CircleAvatar(
-                radius: 70.0,
-                backgroundColor: Colors.amber,
-                backgroundImage: AssetImage('images/kahve.jpg'),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Aşağıdaki menülerden istediğinizi seçiniz!',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
-              SizedBox(width: 20),
-              CircleAvatar(
-                radius: 70.0,
-                backgroundColor: Colors.amber,
-                backgroundImage: AssetImage('images/kahve.jpg'),
-              ),
-            ],
-          ),
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 70,
+                  backgroundImage: AssetImage('images/resim1.jpg'),
+                ),
+                SizedBox(width: 25),
+                CircleAvatar(
+                  radius: 70,
+                  backgroundImage: AssetImage('images/resim2.jpg'),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 70,
+                  backgroundImage: AssetImage('images/resim3.jpg'),
+                ),
+                SizedBox(width: 25),
+                CircleAvatar(
+                  radius: 70,
+                  backgroundImage: AssetImage('images/resim4.jpg'),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
   }
 }
+---
 
-
-MUTLU BAYRAMLAR APPBAR VE ORTAYA YAZI EKLENEBİLİYOR.
-import 'package:flutter/material.dart';
-
-//ctrl+alt+l
-//ctrl+y
-//ctr+/
-//ctrl+d
+DART KOD
+--
+import 'dart:io';
 void main() {
-  const _color = const Color(0xFFD7E0FF);
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        // backgroundColor: Colors.blueGrey[100],
-        backgroundColor: _color,
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text('Mutlu Bayramlar'),
-          backgroundColor: Colors.blueGrey[800],
-        ),
-        body: Center(
-          child: Image.asset('assets/images/mutlu_bayramlar.jpg'),
-        ),
-      ),
-    ),
-  );
-}
+  print("SAYI GİR!");
+  double sonuc = 0.0;
+  int n = int.parse(stdin.readLineSync()!);
+  for(int i = 1; i <= n; i++)
+    {
+      sonuc = i+(i/i+1);
+    }
+  print(sonuc as double);
 
+}
